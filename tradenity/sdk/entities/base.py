@@ -4,7 +4,29 @@ from tradenity.sdk import Tradenity
 from.paging import Page, PageRequest
 
 
-class BaseEntity(Model):
+class Identifiable(Model):
+    @property
+    def id(self):
+        return self.get_id()
+
+    def get_id(self):
+        if hasattr(self, "_id") and self._id is not None:
+            return self._id
+        elif hasattr(self, "_links"):
+            return self._get_id_from_links(self._links)
+
+    @id.setter
+    def id(self, value):
+        self._id = value
+
+    @classmethod
+    def _get_id_from_links(cls, links):
+        if links is not None and "self" in links and "href" in links["self"]:
+            href = links["self"]["href"]
+            return href.split("/")[-1]
+
+
+class BaseEntity(Identifiable):
     RESOURCE_NAME = ''
     WRITABLE_FIELDS = []
     ALL_FIELDS = []
@@ -21,20 +43,6 @@ class BaseEntity(Model):
         # todo this is a temporary hack
         return getattr(self, k)
 
-    @property
-    def id(self):
-        return self.get_id()
-
-    def get_id(self):
-        if hasattr(self, "_id") and self._id is not None:
-            return self._id
-        elif hasattr(self, "_links"):
-            return self._get_id_from_links(self._links)
-
-    @id.setter
-    def id(self, value):
-        self._id = value
-
     @classmethod
     def resource_base_path(cls):
         return "{base}/{res}".format(base=cls.base_url(), res=cls.RESOURCE_NAME)
@@ -42,12 +50,6 @@ class BaseEntity(Model):
     @classmethod
     def resource_path(cls, resource_id):
         return "{base}/{id}".format(base=cls.resource_base_path(), id=resource_id)
-
-    @classmethod
-    def _get_id_from_links(cls, links):
-        if links is not None and "self" in links and "href" in links["self"]:
-            href = links["self"]["href"]
-            return href.split("/")[-1]
 
     @classmethod
     def _convert_to_page(cls, result):

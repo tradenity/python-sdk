@@ -1,6 +1,6 @@
 import bcrypt
 from booby import Model, fields
-from .base import BaseEntity
+from .base import BaseEntity, Identifiable
 
 
 class Address(BaseEntity):
@@ -70,7 +70,7 @@ class Photo(Model):
     url = fields.String()
 
 
-class Weight(BaseEntity):
+class Weight(Model):
     unit = fields.String()
     amount = fields.Float()
 
@@ -132,9 +132,8 @@ class Collection(BaseEntity):
             return results.content[0]
 
 
-class LineItem(Model):
-    _links = fields.Embedded(dict)
-    id = fields.String()
+class LineItem(Identifiable):
+    # id = fields.String()
     quantity = fields.Integer()
     product = fields.Embedded(Product)
     unitPrice = fields.Float()
@@ -142,6 +141,7 @@ class LineItem(Model):
     total = fields.Float()
     taxes = fields.Float()
     shippingCost = fields.Float()
+    _links = fields.Embedded(dict)
 
 
 class ShoppingCart(BaseEntity):

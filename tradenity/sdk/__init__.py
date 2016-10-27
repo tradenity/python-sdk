@@ -17,3 +17,7 @@ class Tradenity(object):
         if cls.INSTANCE is None:
             cls.initialize(key=cls.API_KEY, auth_token_holder=cls.TOKEN_HOLDER)
         return cls.INSTANCE
+
+    @classmethod
+    def reset_current_session(cls):
+        cls.get_client().auth_token_holder.reset()

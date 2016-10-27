@@ -87,7 +87,10 @@ class HttpClient(object):
             else:
                 raise RequestErrorException(error)
         elif result.status_code == 401:
-            raise AuthenticationException(result.json())
+            if self.auth_token_holder.token is None:
+                raise AuthenticationException(result.json())
+            else:
+                raise SessionExpiredException(result.json())
         elif result.status_code == 403:
             raise AuthorizationException(result.json())
         elif result.status_code == 404:

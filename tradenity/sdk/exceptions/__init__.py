@@ -24,10 +24,11 @@ class ErrorMessage(Model):
     status = fields.Integer()
     errorCode = fields.Integer()
     error = fields.String()
+    path = fields.String()
     timestamp = fields.String()
     message = fields.String()
-    details = fields.List() # this is a dict
-    fieldErrors = fields.List() # this is a dict
+    details = fields.List() # todo: this is a dict
+    fieldErrors = fields.List() # todo: this is a dict
 
 
 class RequestErrorException(Exception):
@@ -35,10 +36,17 @@ class RequestErrorException(Exception):
         self.message = ErrorMessage(**err_message)
 
     def __str__(self):
-        return "{code}: {msg}".format(code=self.errorCode, msg=self.message)
+        return "{code}: {msg}".format(code=self.message.errorCode, msg=self.message.message)
+
+    def __repr__(self):
+        return self.__str__()
 
 
 class AuthenticationException(RequestErrorException):
+    pass
+
+
+class SessionExpiredException(RequestErrorException):
     pass
 
 
