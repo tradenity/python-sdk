@@ -1,32 +1,39 @@
-# Tradenity
-
 Welcome to Tradenity Python SDK!
+=====================
 
 ## Installation
 
-Add this line to your application's requirements.txt:
+Install it using pip tool:
+
+    `pip install tradenity`
+
+Or Add this line to your application's requirements.txt:
 
 ```python
-tradenity==0.8
+tradenity==0.1.1
 ```
 
 And then execute:
 
-    $ pip install
+    `pip install -r requirements.txt`
 
-Or install it yourself as:
 
-    $ pip install tradenity
 
 ## Usage
 
-TODO: Write usage instructions here
+### Initialise the library with your store api key and framework:
 
-## Documentation
+`Tradenity.API_KEY = 'sk_1234567'`
+`Tradenity.TOKEN_HOLDER = FlaskAuthTokenHolder`
 
-To generate RDoc use
+### Invoke the required method, for example to get a list of all the categories for that store:
 
-    $ sphinx-build -b html sourcedir builddir
+`Category.find_all()`
+
+
+Detailed documentation can be found on our [knowledge base site:](http://docs.tradenity.com/kb/sdk/python/)
+
+
 
 
 ## Contributing
