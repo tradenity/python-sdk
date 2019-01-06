@@ -225,8 +225,8 @@ class Order(BaseEntity):
 
     @classmethod
     def refund(cls, order_id):
-        url = "orders/{id}/refund".format(id=order_id)
-        result = cls.client().post(url, data={})
+        url = "{base}/{id}/refund".format(base=cls.resource_base_path(), id=order_id)
+        result = cls.client().put(url, data={})
         return Transaction(**result.json())
 
 

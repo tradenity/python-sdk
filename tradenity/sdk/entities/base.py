@@ -5,6 +5,11 @@ from.paging import Page, PageRequest
 
 
 class Identifiable(Model):
+
+    def __getitem__(self, k):
+        # todo this is a temporary hack
+        return getattr(self, k)
+
     @property
     def id(self):
         return self.get_id()
@@ -38,10 +43,6 @@ class BaseEntity(Identifiable):
     @classmethod
     def base_url(cls):
         return Tradenity.END_POINT
-
-    def __getitem__(self, k):
-        # todo this is a temporary hack
-        return getattr(self, k)
 
     @classmethod
     def resource_base_path(cls):
