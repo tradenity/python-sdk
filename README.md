@@ -25,7 +25,6 @@ And then execute:
 ```python
 from tradenity import Configuration
 
-Configuration.HOST = 'http://localhost:8080/api/v1'
 Configuration.API_KEY = 'sk_1234567'
 ```
 
