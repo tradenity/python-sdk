@@ -14,32 +14,25 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as readme_file:
 with open(path.join(here, 'HISTORY.rst'), encoding='utf-8') as history_file:
     history = history_file.read().replace('.. :changelog:', '')
 
-requirements = [
-    'requests',
-    'booby',
-    'bcrypt'
-]
+requirements = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 test_requirements = [
 ]
 
 setup(
     name='tradenity',
-    version='0.1.1',
+    version='1.0.0',
     description="Python SDK for the Tradenity e-commerce REST API",
     long_description=readme + '\n\n' + history,
     author="Joseph Fouad",
     author_email='tradenity@tradenity.com',
     url='https://github.com/tradenity/python-sdk',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
-    entry_points={
-        'console_scripts': [],
-        },
     include_package_data=True,
     install_requires=requirements,
     license="APACHE",
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
