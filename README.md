@@ -10,7 +10,7 @@ Install it using pip tool:
 Or Add this line to your application's requirements.txt:
 
 ```python
-tradenity==0.1.1
+tradenity==1.0.0
 ```
 
 And then execute:
@@ -22,9 +22,12 @@ And then execute:
 ## Usage
 
 ### Initialise the library with your store api key and framework:
+```python
+from tradenity import Configuration
 
-`Tradenity.API_KEY = 'sk_1234567'`
-`Tradenity.TOKEN_HOLDER = FlaskAuthTokenHolder`
+Configuration.HOST = 'http://localhost:8080/api/v1'
+Configuration.API_KEY = 'sk_1234567'
+```
 
 ### Invoke the required method, for example to get a list of all the categories for that store:
 
