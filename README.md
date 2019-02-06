@@ -1,6 +1,8 @@
 Welcome to Tradenity Python SDK!
 =====================
 
+This is python SDK for [Tradenity ecommerce API](https://www.tradenity.com).
+
 ## Installation
 
 Install it using pip tool:
@@ -10,7 +12,7 @@ Install it using pip tool:
 Or Add this line to your application's requirements.txt:
 
 ```python
-tradenity==1.0.0
+tradenity==1.0.1
 ```
 
 And then execute:
@@ -21,11 +23,11 @@ And then execute:
 
 ## Usage
 
-### Initialise the library with your store api key and framework:
+### Initialise the library with your store api key :
 ```python
 from tradenity import Configuration
 
-Configuration.API_KEY = 'sk_1234567'
+Configuration.API_KEY = 'sk_xxxxxxxxxxxxxxxxxxxxxxxx'
 ```
 
 ### Invoke the required method, for example to get a list of all the categories for that store:
