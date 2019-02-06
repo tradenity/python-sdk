@@ -286,8 +286,8 @@ class Address(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_addresses()
+    def find_all(cls, **kwargs):
+        return cls.list_all_addresses(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

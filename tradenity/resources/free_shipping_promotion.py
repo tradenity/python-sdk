@@ -295,8 +295,8 @@ class FreeShippingPromotion(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_free_shipping_promotions()
+    def find_all(cls, **kwargs):
+        return cls.list_all_free_shipping_promotions(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

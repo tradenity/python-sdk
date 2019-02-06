@@ -217,8 +217,8 @@ class PaymentSource(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_payment_sources()
+    def find_all(cls, **kwargs):
+        return cls.list_all_payment_sources(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

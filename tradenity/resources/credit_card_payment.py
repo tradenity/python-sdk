@@ -348,8 +348,8 @@ class CreditCardPayment(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_credit_card_payments()
+    def find_all(cls, **kwargs):
+        return cls.list_all_credit_card_payments(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

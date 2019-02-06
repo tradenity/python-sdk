@@ -237,8 +237,8 @@ class StoreCredit(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_store_credits()
+    def find_all(cls, **kwargs):
+        return cls.list_all_store_credits(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

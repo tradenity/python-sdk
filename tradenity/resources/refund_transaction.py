@@ -222,8 +222,8 @@ class RefundTransaction(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_refund_transactions()
+    def find_all(cls, **kwargs):
+        return cls.list_all_refund_transactions(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

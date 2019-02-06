@@ -346,8 +346,8 @@ class Coupon(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_coupons()
+    def find_all(cls, **kwargs):
+        return cls.list_all_coupons(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

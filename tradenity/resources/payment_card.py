@@ -425,8 +425,8 @@ class PaymentCard(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_payment_cards()
+    def find_all(cls, **kwargs):
+        return cls.list_all_payment_cards(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

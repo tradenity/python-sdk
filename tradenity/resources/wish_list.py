@@ -237,8 +237,8 @@ class WishList(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_wish_lists()
+    def find_all(cls, **kwargs):
+        return cls.list_all_wish_lists(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

@@ -273,7 +273,7 @@ class ApiClient(object):
             if klass.startswith('page['):
                 sub_kls = re.match('page\[(.*)\]', klass).group(1)
                 return Page([self.__deserialize(sub_data, sub_kls)
-                        for sub_data in data["items"]], self.__deserialize_page_info(data["__meta"]))
+                            for sub_data in data["items"]], self.__deserialize_page_info(data["__meta"]))
             if klass.startswith('list['):
                 sub_kls = re.match('list\[(.*)\]', klass).group(1)
                 return [self.__deserialize(sub_data, sub_kls)

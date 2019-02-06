@@ -346,8 +346,8 @@ class Category(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_categories()
+    def find_all(cls, **kwargs):
+        return cls.list_all_categories(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

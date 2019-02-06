@@ -350,8 +350,8 @@ class Option(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_options()
+    def find_all(cls, **kwargs):
+        return cls.list_all_options(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

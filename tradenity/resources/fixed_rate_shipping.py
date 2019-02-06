@@ -427,8 +427,8 @@ class FixedRateShipping(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_fixed_rate_shippings()
+    def find_all(cls, **kwargs):
+        return cls.list_all_fixed_rate_shippings(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):

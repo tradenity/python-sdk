@@ -525,8 +525,8 @@ class Variant(object):
 
 
     @classmethod
-    def find_all(cls, page_request=None):
-        return cls.list_all_variants()
+    def find_all(cls, **kwargs):
+        return cls.list_all_variants(**kwargs)
 
     @classmethod
     def find_all_by(cls, **kwargs):
