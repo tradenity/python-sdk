@@ -1,7 +1,8 @@
-Welcome to Tradenity Python SDK!
+Welcome to Python SDK for Tradenity ecommerce API!
 =====================
 
 This is python SDK for [Tradenity ecommerce API](https://www.tradenity.com).
+This SDK makes developing and building python ecommerce application really easy. 
 
 ## Installation
 
@@ -37,6 +38,34 @@ Configuration.API_KEY = 'sk_xxxxxxxxxxxxxxxxxxxxxxxx'
 
 Detailed documentation can be found on our [knowledge base site](http://docs.tradenity.com/kb/sdk/python/).
 
+
+## Extensions for common Python frameworks
+
+These libraries eases the integration between Tradenity SDK and the corresponding framework:
+
+[Django framework extension library](https://github.com/tradenity/python-sdk-django-ext).
+
+[Flask framework  extension library](https://github.com/tradenity/python-sdk-flask-ext).
+
+
+## Tutorials and sample applications
+
+We provide 2 sample applications, actually it is the same application implemented using 2 frameworks: `Django`, and `Flask`.
+You can find live demo here:
+
+[Camera store sample application live demo](http://camera-store-sample.tradenity.com/)
+
+You can find the code at github:
+
+[Camera store for django code](https://github.com/tradenity/camerastore-python-django-sample).
+
+[Camera store for flask code](https://github.com/tradenity/camerastore-python-flask-sample).
+
+We also provide a detailed explanation of the code of these sample applications in the form of a step by step tutorials:
+
+[Camera store for django tutorial](http://docs.tradenity.com/kb/tutorials/python/django/).
+
+[Camera store for flask tutorial](http://docs.tradenity.com/kb/tutorials/python/flask/).
 
 
 
